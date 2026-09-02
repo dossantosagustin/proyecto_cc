@@ -48,13 +48,16 @@ if (!$disponibilidad) {
 
     <meta charset="UTF-8">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Enviar propuesta</title>
 
     <style>
 
         body {
             font-family: Arial, sans-serif;
-            margin: 40px;
+            margin: 0;
+            padding: 40px 20px;
             background-color: #f5f5f5;
         }
 
@@ -68,6 +71,11 @@ if (!$disponibilidad) {
 
         h1 {
             margin-bottom: 25px;
+        }
+
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
         }
 
         .fecha {
@@ -89,10 +97,12 @@ if (!$disponibilidad) {
             width: 100%;
             padding: 10px;
             box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
 
         textarea {
-            height: 120px;
+            min-height: 120px;
             resize: vertical;
         }
 
@@ -104,10 +114,18 @@ if (!$disponibilidad) {
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 16px;
         }
 
         button:hover {
             background-color: #555;
+        }
+
+        .volver {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #333;
         }
 
     </style>
@@ -119,8 +137,14 @@ if (!$disponibilidad) {
 
 <div class="contenedor">
 
+    <a class="volver" href="calendario.php">
+        ← Volver al calendario
+    </a>
+
     <h1>Enviar propuesta</h1>
 
+
+    <!-- FECHA Y HORARIO SELECCIONADOS -->
 
     <div class="fecha">
 
@@ -143,7 +167,8 @@ if (!$disponibilidad) {
 
     <form action="guardar_propuesta.php" method="POST">
 
-        <!-- ID de la disponibilidad -->
+
+        <!-- ID DE LA DISPONIBILIDAD -->
 
         <input
             type="hidden"
@@ -152,79 +177,165 @@ if (!$disponibilidad) {
         >
 
 
+        <!-- DATOS DEL PROYECTO -->
+
+        <h2>Datos del proyecto</h2>
+
+
         <label for="nombre_banda">
-            Nombre de la banda
+            Nombre de la banda o proyecto:
         </label>
 
         <input
             type="text"
             id="nombre_banda"
             name="nombre_banda"
+            maxlength="150"
             required
         >
 
 
         <label for="genero_estilo">
-            Género / estilo musical
+            Género o estilo musical:
         </label>
 
         <input
             type="text"
             id="genero_estilo"
             name="genero_estilo"
+            maxlength="100"
+            required
+        >
+
+
+        <label for="descripcion_proyecto">
+            Descripción del proyecto:
+        </label>
+
+        <textarea
+            id="descripcion_proyecto"
+            name="descripcion_proyecto"
+            rows="5"
+            required
+        ></textarea>
+
+
+        <label for="redes_sociales">
+            Redes sociales:
+        </label>
+
+        <input
+            type="text"
+            id="redes_sociales"
+            name="redes_sociales"
+            maxlength="255"
+        >
+
+
+        <label for="link_musica">
+            Link para escuchar música:
+        </label>
+
+        <input
+            type="url"
+            id="link_musica"
+            name="link_musica"
+            maxlength="500"
+            placeholder="Spotify, YouTube, Bandcamp, etc."
+            required
+        >
+
+
+        <label for="link_presentacion">
+            Link a una presentación en vivo:
+        </label>
+
+        <input
+            type="url"
+            id="link_presentacion"
+            name="link_presentacion"
+            maxlength="500"
+        >
+
+
+        <!-- DATOS DE CONTACTO -->
+
+        <h2>Datos de contacto</h2>
+
+
+        <label for="nombre_contacto">
+            Nombre y apellido:
+        </label>
+
+        <input
+            type="text"
+            id="nombre_contacto"
+            name="nombre_contacto"
+            maxlength="150"
             required
         >
 
 
         <label for="email">
-            Email de contacto
+            Email:
         </label>
 
         <input
             type="email"
             id="email"
             name="email"
+            maxlength="150"
             required
         >
 
 
-        <label for="telefono">
-            Teléfono / WhatsApp
+        <label for="telefono_whatsapp">
+            Teléfono / WhatsApp:
         </label>
 
         <input
-            type="text"
-            id="telefono"
-            name="telefono"
+            type="tel"
+            id="telefono_whatsapp"
+            name="telefono_whatsapp"
+            maxlength="50"
             required
         >
 
 
-        <label for="descripcion">
-            Descripción de la propuesta
+        <!-- PROPUESTA -->
+
+        <h2>Propuesta</h2>
+
+
+        <label for="descripcion_propuesta">
+            ¿Qué propuesta les gustaría realizar en el Centro Cultural?
         </label>
 
         <textarea
-            id="descripcion"
-            name="descripcion"
+            id="descripcion_propuesta"
+            name="descripcion_propuesta"
+            rows="6"
             required
         ></textarea>
 
 
-        <label for="rider">
-            Rider técnico (opcional)
+        <label for="rider_tecnico">
+            Rider técnico:
         </label>
 
-        <input
-            type="text"
-            id="rider"
-            name="rider"
-        >
+        <textarea
+            id="rider_tecnico"
+            name="rider_tecnico"
+            rows="4"
+        ></textarea>
 
+
+        <!-- BOTÓN -->
 
         <button type="submit">
             Enviar propuesta
         </button>
+
 
     </form>
 
