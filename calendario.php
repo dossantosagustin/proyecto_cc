@@ -4,7 +4,7 @@ include "conexion.php";
 
 // Obtener el mes y año desde la URL.
 // Si no existen, usamos el mes actual.
-$mes = isset($_GET['mes']) ? intval($_GET['mes']) : date('m');
+$mes = isset($_GET['mes']) ? intval($_GET['mes']) : intval(date('m'));
 $anio = isset($_GET['anio']) ? intval($_GET['anio']) : date('Y');
 
 // Ajustar si el mes es menor que 1 o mayor que 12
