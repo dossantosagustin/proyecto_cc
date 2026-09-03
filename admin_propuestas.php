@@ -1,5 +1,7 @@
 <?php
 
+require_once("proteccion_admin.php");
+
 include("conexion.php");
 
 // Obtener todas las propuestas
