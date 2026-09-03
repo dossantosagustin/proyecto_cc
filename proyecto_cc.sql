@@ -70,6 +70,10 @@ CREATE TABLE `disponibilidad` (
   DEFAULT CHARSET=utf8mb4
   COLLATE=utf8mb4_unicode_ci;
 
+INSERT INTO disponibilidad
+(fecha, hora_inicio, hora_fin, estado, observaciones)
+VALUES
+('2026-09-20', '18:00:00', '22:00:00', 'DISPONIBLE', 'Fecha disponible para pruebas');
 
 -- --------------------------------------------------------
 -- Tabla: propuesta
