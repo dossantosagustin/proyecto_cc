@@ -123,6 +123,15 @@ if ($mes_siguiente > 12) {
             text-decoration: none;
         }
 
+        .logo-mil-flores {
+            width: 55px;
+            height: 55px;
+            max-width: 55px;
+            object-fit: contain;
+            display: block;
+            flex-shrink: 0;
+        }
+
         .logo-texto strong {
             display: block;
             font-family: 'Barlow Condensed', sans-serif;
@@ -508,9 +517,13 @@ if ($mes_siguiente > 12) {
 <body>
 
 <header class="encabezado">
-
     <a href="index.php" class="marca">
-        <!-- Si ya tenés el logo, cambiá esta ruta por la del archivo real -->
+        <img
+            src="foto1.jpg"
+            alt="Logo de Mil Flores"
+            class="logo-mil-flores"
+        >
+
         <span class="logo-texto">
             <strong>MIL FLORES</strong>
             <small>CENTRO CULTURAL</small>
@@ -521,7 +534,6 @@ if ($mes_siguiente > 12) {
         <a href="index.php">INICIO</a>
         <a href="calendario.php">CALENDARIO</a>
     </nav>
-
 </header>
 
 <main>

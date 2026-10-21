@@ -60,10 +60,15 @@
             text-decoration: none;
         }
 
-        .flor {
-            color: var(--naranja);
-            font-size: 43px;
-            line-height: 1;
+        /* LOGO: tamaño controlado en todas las pantallas */
+
+        .logo-mil-flores {
+            width: 55px;
+            height: 55px;
+            max-width: 55px;
+            object-fit: contain;
+            display: block;
+            flex-shrink: 0;
         }
 
         .marca-texto strong {
@@ -405,14 +410,6 @@
                 text-align: center;
             }
 
-            .logo-mil-flores {
-                width: 55px;
-                height: 55px;
-                object-fit: contain;
-                display: block;
-                flex-shrink: 0;
-            }
-
             .marca-texto strong {
                 font-size: 26px;
             }
@@ -425,9 +422,9 @@
 <header class="encabezado">
 
     <a href="index.php" class="marca">
-        <img src="img/logo-mil-flores.png"
-            alt="Logo de Mil Flores"
-            class="logo-mil-flores">
+        <img src="foto1.jpg"
+             alt="Logo de Mil Flores"
+             class="logo-mil-flores">
 
         <span class="marca-texto">
             <strong>MIL FLORES</strong>
@@ -504,6 +501,8 @@
             </a>
 
         </div>
+
+    </section>
 
 </main>
 
